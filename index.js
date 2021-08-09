@@ -267,8 +267,9 @@ function startPrompt() {
   // update an employee role
   function updateEmployee() {
     db.query("SELECT employee.last_name, role.title FROM employee JOIN role ON employee.role_id = role.id;", function(err, res) {
-    // console.log(res)
-     if (err) throw err
+      if (err) {
+        console.log(err);
+      }
      console.log(res)
     inquirer.prompt([
           {
